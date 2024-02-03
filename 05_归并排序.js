@@ -31,13 +31,16 @@ const merge = (left, right) => {
     }
 
     // 如果其中一个子数组还有剩余
-    if (leftIndex < left.length) {
-        // 说明左边有剩余
-        return [...result, ...left.slice(leftIndex)];
-    } else {
-        // 右边有剩余
-        return [...result, ...right.slice(rightIndex)];
-    }
+    // if (leftIndex < left.length) {
+    //     // 说明左边有剩余
+    //     return [...result, ...left.slice(leftIndex)];
+    // } else {
+    //     // 右边有剩余
+    //     return [...result, ...right.slice(rightIndex)];
+    // }
+
+    // 换一种写法
+    return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex));
 };
 
 console.log(mergeSort([3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48]));
